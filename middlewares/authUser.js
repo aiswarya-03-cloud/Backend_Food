@@ -111,7 +111,7 @@ export const authUser = (req, res, next) => {
         console.log("token--", token) 
         
 
-        console.log("secret key--",process.env.JWT_Sk)
+        console.log("secret key--",process.env.JWT_SK)
 
         const tokenVerified = jwt.verify(token, process.env.JWT_SK);
         console.log("--TokenVerified--", tokenVerified)
