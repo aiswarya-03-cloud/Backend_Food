@@ -88,6 +88,7 @@ import jwt from "jsonwebtoken";
 
 export const authUser = (req, res, next) => {
     try {
+            console.log("All Env Variables:", process.env);
          console.log("CloudAPIKey--",process.env.CLD_API_KEY)
         console.log("StripeAPIKey--",process.env.STRIPE_SECRET_KEY)
         console.log("secret key--",process.env.JWT_Sk)
