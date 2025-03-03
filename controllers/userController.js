@@ -85,12 +85,20 @@ export const userSignup = async (req, res, next) => {
         // res.cookie('token', token);
         console.log("SignUp_TOKEN", token)
 
-        res.cookie("token",token, {
+        // res.cookie("token",token, {
 
-          sameSite: NODE_ENV === "production" ? "None" : "Lax",
-          secure: NODE_ENV === "production",
-          httpOnly: NODE_ENV === "production",
-        });
+        //   sameSite: NODE_ENV === "production" ? "None" : "Lax",
+        //   secure: NODE_ENV === "production",
+        //   httpOnly: NODE_ENV === "production",
+        // });
+
+      res.cookie('token',token,{
+    sameSite: 'None',
+    secure : true,
+    httpOnly: true,
+    path: '/',
+    //maxAge: 2 * 60 * 60 * 1000 // 2 hours in milliseconds
+  })
 
         //return res.json({ data: userData, message: "user account created" });
 
@@ -139,22 +147,22 @@ export  const userLogin = async (req, res, next) => {
 
   
 
-  // res.cookie('token',token,{
-  //   sameSite: 'None',
-  //   secure : true,
-  //   httpOnly: true,
-  //   path: '/',
-  //   maxAge: 2 * 60 * 60 * 1000 // 2 hours in milliseconds
-  // })
+  res.cookie('token',token,{
+    sameSite: 'None',
+    secure : true,
+    httpOnly: true,
+    path: '/',
+    //maxAge: 2 * 60 * 60 * 1000 // 2 hours in milliseconds
+  })
 
 
   
-  res.cookie("token",token, {
+  // res.cookie("token",token, {
 
-    sameSite: NODE_ENV === "production" ? "None" : "Lax",
-    secure: NODE_ENV === "production",
-    httpOnly: NODE_ENV === "production",
-  });
+  //   sameSite: NODE_ENV === "production" ? "None" : "Lax",
+  //   secure: NODE_ENV === "production",
+  //   httpOnly: NODE_ENV === "production",
+  // });
   //res.status(200).json({success:true,message:'user logged in successfully'})
   console.log("LoginToken--", token)
 
