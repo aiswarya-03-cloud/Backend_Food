@@ -91,7 +91,7 @@ export const authUser = (req, res, next) => {
             console.log("All Env Variables:", process.env);
          console.log("CloudAPIKey--",process.env.CLD_API_KEY)
         console.log("StripeAPIKey--",process.env.STRIPE_SECRET_KEY)
-        console.log("secret key--",process.env.JWT_Sk)
+        console.log("secret key--",process.env.JWT_SK)
         console.log("cookoies--",req.cookies.token)
         const { token } = req.cookies;
 
