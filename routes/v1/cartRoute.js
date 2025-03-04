@@ -31,8 +31,8 @@ const router = express.Router()
 // router.route('/update').post(authUser, updateCart)
 router.delete('/remove-from-cart',authUser,removeFromCart)
  router.get('/getcart',authUser,getCart);
- router.post('/add',authUser,addToCart);
- router.post('/add',authUser,addToCart);
+ router.post('/add',addToCart);
+// router.post('/add',authUser,addToCart);
 // router.route('/').get(authUser, getCart)
 // router.route('/clear').post(authUser, clearCart)
 
