@@ -5,7 +5,7 @@ import fs from 'fs'
 
 const addFood = async (req,res) => {
 
-    let image_filename = '';
+    let imageName = '';
     if(req.file){
         imageName = req.file.filename;
     }else{
