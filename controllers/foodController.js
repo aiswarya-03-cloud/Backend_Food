@@ -5,7 +5,18 @@ import fs from 'fs'
 
 const addFood = async (req,res) => {
 
-    let image_filename = `${req.file.filename}`
+    let image_filename = '';
+    if(req.file){
+        imageName = req.file.filename;
+    }else{
+       console.error('No file was uploaded');
+    }
+
+    try{
+        console.log("ReqFile--",req.file)
+        let image_filename = `${req.file.filename}`
+        console.log("Img_fileName:",image_filename)
+    }
 
     const food = new foodModel({
         name: req.body.name,
@@ -25,7 +36,11 @@ const addFood = async (req,res) => {
     }
 
 }
-
+catch(error) {
+    console.log(error)
+    res.json({success:false,message: "Error"})
+    }
+}
 // All food List
 const listfood = async(req,res)=>{
 
